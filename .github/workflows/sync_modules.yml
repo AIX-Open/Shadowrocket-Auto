@@ -1,0 +1,29 @@
+name: Sync and Process Upstream Modules
+
+on:
+  schedule:
+    - cron: '0 0 * * 0' # 每周（每周日 UTC 时间 0点）自动同步一次
+  workflow_dispatch: # 支持手动一键触发
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Run Processing Script
+        run: |
+          python3 .github/workflows/Module/scripts/process_modules.py
+
+      - name: Commit and Push Changes
+        run: |
+          git config --global user.name 'GitHub Actions Bot'
+          git config --global user.email 'actions@github.com'
+          git add .
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-update and clean upstream modules" && git push)
