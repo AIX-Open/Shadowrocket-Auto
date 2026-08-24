@@ -4,4 +4,5 @@ This repository contains Shadowrocket configurations, scripts, routing rules, an
 
 订阅地址：
 1.https://cdn.jsdelivr.net/gh/AIX-Open/Shadowrocket-Auto@master/Shadowrocket/Shadowrocket.conf
+
 2.https://raw.githubusercontent.com/AIX-Open/Shadowrocket-Auto/master/Shadowrocket/Shadowrocket.conf
