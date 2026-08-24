@@ -4,12 +4,12 @@
 
 #TikTok 解锁规则模块  订阅地址
 
-    'https://raw.githubusercontent.com/Semporia/TikTok-Unlock/master/Shadowrocket/TikTok.sgmodule'
+    https://raw.githubusercontent.com/Semporia/TikTok-Unlock/master/Shadowrocket/TiKTok-US.conf
 
     # 注释
     'TikTok 解锁规则模块'添加规则集中URL
     'URL规则集地址'
-    'RULE-SET,https://raw.githubusercontent.com/Semporia/TikTok-Unlock/master/Shadowrocket/TikTok.list,PROXY'
+    https://raw.githubusercontent.com/Semporia/TikTok-Unlock/master/Shadowrocket/TikTok.list
     
 # Talkatone 去广告模块(强制去广告/开屏拦截)
 
