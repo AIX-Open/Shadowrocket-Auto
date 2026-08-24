@@ -1,9 +1,12 @@
 [Name]
-🆃🅾🅿🅼🅾🅳🆂 Vodafone DE Call
+🆃🅾🅿🅼🅾🅳🆂 Germany Call (Vodafone & O2)
+
 [Description]
-参数编辑可以细化设置。适用于德国沃达丰（Vodafone DE）SIM卡的Wi-Fi Calling功能
+参数编辑可以细化设置。适用于德国沃达丰（Vodafone DE）与 O2（Telefonica DE）SIM卡的Wi-Fi Calling功能
+
 [arguments]
 默认代理分组:DE-Call, 通话端口代理:AND, 苹果地区检测:DOMAIN-SUFFIX
+
 [arguments-desc]
 ·默认代理分组：默认使用模块内置的名为“DE-Call”的代理分组进行代理，可填入自定义的代理分组或节点名称\n\n·通话端口代理：模块默认代理了Wi-Fi通话常用的500和4500的UDP端口，填入#号可以禁用相关端口的代理\n\n·苹果地区检测：模块默认代理了苹果的地区检测URL地址，填入#号可以恢复为默认规则\n\n·地区检测查询：https://gspe1-ssl.ls.apple.com/pep/gcc
 
@@ -17,9 +20,20 @@ DE-Call = url-test,url=http://www.gstatic.com/generate_204,interval=600,toleranc
 # 通话端口代理
 {{{通话端口代理}}},((GEOIP,DE),(AND,((PROTOCOL,UDP),(OR,((DEST-PORT,500),(DEST-PORT,4500)))))),{{{默认代理分组}}}
 
-# Vodafone Germany (德国沃达丰 ePDG 网关与核心域)
+# =========================
+# 德国沃达丰 (Vodafone DE)
+# =========================
 DOMAIN-SUFFIX,vodafone-ip.de,{{{默认代理分组}}}
 DOMAIN-SUFFIX,epdg.epc.mnc002.mcc262.pub.3gppnetwork.org,{{{默认代理分组}}}
 DOMAIN-SUFFIX,epdg.epc.mnc009.mcc262.pub.3gppnetwork.org,{{{默认代理分组}}}
+
+# =========================
+# 德国 O2 (Telefonica DE)
+# =========================
+DOMAIN-SUFFIX,o2online.de,{{{默认代理分组}}}
+DOMAIN-SUFFIX,telefonica.de,{{{默认代理分组}}}
+DOMAIN-SUFFIX,epdg.epc.mnc003.mcc262.pub.3gppnetwork.org,{{{默认代理分组}}}
+DOMAIN-SUFFIX,epdg.epc.mnc007.mcc262.pub.3gppnetwork.org,{{{默认代理分组}}}
+
+# 德国国家码匹配 (MCC 262)
 DOMAIN-KEYWORD,mcc262,{{{默认代理分组}}}
-IP-CIDR,139.7.0.0/16,{{{默认代理分组}}},no-resolve
